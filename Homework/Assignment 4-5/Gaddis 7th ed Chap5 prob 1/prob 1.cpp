@@ -28,8 +28,8 @@ int main(int argc, char** argv) {
     if (nmbr>0){
     //Loop for adding
     
-    for (int x = 1; x <= nmbr; x++ ){
-        sum += x;
+    for (int x = 1; x <= nmbr; x++ ){ 
+        sum += x; //adding together all the values of nmbr
         
          }
     cout<<"The sum of your numbers is "<<sum<<endl;

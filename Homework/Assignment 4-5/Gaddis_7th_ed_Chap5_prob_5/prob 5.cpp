@@ -18,23 +18,22 @@ using namespace std;
 int main(int argc, char** argv) {
     
     //Variables 
-    float calRate = 3.9; //The rate that calories are burnt per min.
-    float calBrnt; //Total calories burn 
+    float mmCst = 2500; //Cost of membership
+    float prcntIn = 1.04; //Percent increase each year 
     
     //Header 
     
-    cout<<left<<setw(8)<<"Mins"<<left<<setw(10)<<"Calories burnt \n";
+    cout<<left<<setw(8)<<"Year"<<left<<setw(10)<<"Price     \n";
     
     //Outputting the raise in ocean level
     
-    for (int time = 10; time<=30; (time+=5)){
+    for (int year = 1; year<=6; year++){
         
         //Calculations 
-        calBrnt = calRate*time ; //Amount of calories burnt every five min
+        mmCst *= prcntIn; //Current price of membership that year
         //Outputting formated results 
-        cout<<fixed<<showpoint<<setprecision(1)
-        
-        <<left<<setw(8)<<time<<left<<setw(3)<<calBrnt<<" \n";
+        cout<<fixed<<showpoint<<setprecision(2)
+        <<left<<setw(8)<<year<<"$"<<left<<setw(3)<<mmCst<<" \n";
     }
     //end
     return 0;
