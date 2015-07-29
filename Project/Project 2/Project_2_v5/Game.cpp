@@ -282,17 +282,17 @@ void sort(char **table, int counter, int level){
                                                                          //are equal. 
             if ( table[i][indx]>table[i+1][indx]){ //If that row and col. not equal 
                                                   //then check if first is larger if it is then swap all numbers
-                cout<<"i>i+1"<<endl;
+                
                 for(int j = 0; j <level; j++){ //Swapping each 2 rows and their respective columns until all the rows are swapped
                 table [i][j] = table [i][j]^table[i+1][j]; //in place swap. to hopefully make Dr lehr happy so he give me extra credit
-                table [i+1][j] = table [i][j]^table[i+1][j];
+                table [i+1][j] = table [i][0]^table[i+1][j];
                 table [i][j] = table [i][j]^table[i+1][j];
                 }
                 swap = true;            
             }
                 
         }
-    }while(swap == true);
+    }while(swap);
     
     cout<<"Sorted answers via bubble sorts !!"<<endl;
     for(int i = 0;i<counter; i++){
