@@ -1,5 +1,5 @@
 *********************************************************************************************
-**                     		      **Mastermind jr.**                                   **
+**                     		      **Mastermind **                                      **
 **           You have to guess numbers that are between 0-9 within 9 guesses!              **
 **              First select either easy or normal. easy = 3 numbers normal = 4            **
 **   			First type in three or four numbers as your guess                  **

@@ -51,7 +51,7 @@ int main(int argc, char** argv) {
       // cout<<"Call prepare."<<endl;//For diagonostics
        input.open("instructions.txt");
        if(input.is_open()){
-           for (int i = 0; i<11; i++){
+           for (int i = 0; i<12; i++){
            getline(input,temp); //Change instructions 
            cout<<temp;
            }
@@ -153,7 +153,7 @@ char ** prepare (int answer[], int &xs, short &os, int &guess, bool match[], int
     char **table;
     
     
-    guess = 9;
+   guess = 9;
   
     for (int i = 0; i<level; i++){
         answer[i] = rand()%10; //creating answer from 0-9
@@ -161,6 +161,14 @@ char ** prepare (int answer[], int &xs, short &os, int &guess, bool match[], int
 
         //cout<<"answer = "<<answer[i]; //For diagonostics 
     }
+    
+    
+    
+//    answer[0]=3;
+//    answer[1]=3;
+//    answer[2]=4;
+//    
+    
     table = new char *[guess]; //Creating 2 d dynamic array
     for (int i = 0; i<guess; i++){ //
         table[i] = new char[level];
@@ -222,14 +230,16 @@ int compare(int answer[], short &os, string usrG, bool match[], int level){
    for(int i = 0; i<level; i++){ 
        if(answer[i] == (usrG[i]-48)){ //subtracting 48 makes it an integer
            xs++;
+           //cout<<"match["<<i<<"] = true"<<endl;
            match[i] = true;
        }
    }
     //Checking for os
     for(int i = 0; i<level; i++){ //i is position of answer
         for(int j = 0; j<level; j++){ //j is position of usrG(user guess)
-            if(j !=i && match[i] == false && answer[i] == usrG[j]-48){
-                //cout<<"increased o"<<endl; //For diagonostics
+            if(j !=i && match[j] == false && answer[i] == usrG[j]-48){
+//                cout<<"Match["<<i<<"] = "<<match[i]<<" usrG["<<j<<"] = "<<usrG[j]<<endl
+//                        <<"Answer["<<i<<"] = "<<answer[i]<<endl;
                 os++;
                 match[i] = true;
             }
