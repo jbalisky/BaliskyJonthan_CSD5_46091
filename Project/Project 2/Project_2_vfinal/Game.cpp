@@ -2,7 +2,7 @@
  File:   Game.cpp
  Author: Jonathan Balisky
  Created on July 25, 2015, 9:18 pM
- Purpose:  Mastermind jr. 
+ Purpose:  Mastermind jr.  
  */
 
 //Libraries 
@@ -80,7 +80,7 @@ int main(int argc, char** argv) {
       table = prepare(answer, xs, os, guess, match, level); //Initialize 
        
        // cout<<"Call prepare."<<endl;//For diagonostics
-       output.open("Answer.txt");
+       output.open("Answer.dat");
        
        for (int i = 0; i<level; i++){
         output<<answer[i];
@@ -104,8 +104,8 @@ int main(int argc, char** argv) {
            counter++;//gssHst Ran
            xs=compare(answer, os, usrG, match, level);
 
-           cout<<"x="<<xs<<endl; //Right numbers in right space
-           cout<<"o="<<os<<endl; //How many Correct number but in the incorrect space
+           cout<<"X(s)="<<xs<<endl; //Right numbers in right space
+           cout<<"O(s)="<<os<<endl; //How many Correct number but in the incorrect space
            guess--;
            cout<<"Guesses left: "<<guess<<endl;
 
@@ -238,8 +238,8 @@ int compare(int answer[], short &os, string usrG, bool match[], int level){
     for(int i = 0; i<level; i++){ //i is position of answer
         for(int j = 0; j<level; j++){ //j is position of usrG(user guess)
             if(j !=i && match[j] == false && answer[i] == usrG[j]-48){
-//                cout<<"Match["<<i<<"] = "<<match[i]<<" usrG["<<j<<"] = "<<usrG[j]<<endl
-//                        <<"Answer["<<i<<"] = "<<answer[i]<<endl;
+//    //            cout<<"Match["<<i<<"] = "<<match[i]<<" usrG["<<j<<"] = "<<usrG[j]<<endl
+//      //                  <<"Answer["<<i<<"] = "<<answer[i]<<endl;
                 os++;
                 match[i] = true;
             }
