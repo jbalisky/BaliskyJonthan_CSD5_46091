@@ -1,7 +1,7 @@
 /* 
- File:   Prob 4.cpp
+ File:   Prob 10.cpp
  Author: Jonathan Balisky
- Created on July 7, 2015, 10:33 PM
+ Created on Sept 10, 2015, :33 PM
  Purpose: Which Rectangle is bigger! 
  */
 
@@ -17,29 +17,18 @@ using namespace std;
 int main(int argc, char** argv) {
 
     //Variables 
-    unsigned int lngth1, lngth2, wdth1, wdth2;
+    int qnty = 0; //Amount of packages sold 
+    float pkgP = 99.00f; //Retail price of package 
     
     //User input 
-    cout<<"Please enter the length, then the width of the 1st rectangle in inches.\n";
-    cin>>lngth1>>wdth1;
-    cout<<"Please enter the length, then the width of the 2nd rectangle in inches.\n";
-    cin>>lngth2>>wdth2;
     
-    if ((lngth1*wdth1)>(lngth2*wdth2)){ //First is bigger
-        cout<<"The first rectangle with the area of "<<lngth1*wdth1
-        <<" inches is larger than the second with the area of "<<lngth2*wdth2
-        <<" inches. \n";
-    }
-    else if ((lngth1*wdth1)==(lngth2*wdth2)){ //They are the same
-        cout<<"The first rectangle with the area of "<<lngth1*wdth1
-        <<" inches is the same as the second with the area of "<<lngth2*wdth2
-        <<" inches. \n";
-    }
-    else  { //Second is bigger
-        cout<<"The first rectangle with the area of "<<lngth1*wdth1
-        <<" inches is smaller than the second with the area of "<<lngth2*wdth2
-        <<" inches. \n";
-    }
+    do{
+        cout<<"Please enter a the amount of packages being purchased\n"
+                "(amount needs to be greater than zero): ";
+        cin>>qnty;
+    }while(qnty<1);
+    
+    
     return 0;
 }
 
