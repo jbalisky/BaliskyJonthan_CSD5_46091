@@ -375,6 +375,7 @@ void problem5(){
     float hours; //How many hours worked
     float pay; // Amount should be payed
     float rate; // Pay rate
+    float temp; //Temp holder for pay
     
     do{ //Input validation make sure positive number of hours 
     cout<<"Please enter amount of hours worked, in the format hh.hh: "; //enter hours worked
@@ -392,12 +393,20 @@ void problem5(){
      }
             
     else if (hours >20 && hours < 40){//Time an a half
+        temp =  20.00;
+        hours -= 20.00;
+        pay = temp*rate ;
         hours *= 1.5; //Time and a half over 20 hours 
-        pay = hours*rate;// amount to be payed
+        pay += (hours*rate);// amount to be payed
     }
     else{ //All time over 40 is double time
+        temp = 20;
+        pay =temp*rate; //
+        temp = hours-40
+        pay += (temp*1.5)*rate;
+        hours -= 50;
         hours *= 2; //twice the hours 
-        pay = hours*rate;// amount to be payed
+        pay += (hours*rate);// amount to be payed
     }
     
    cout<<"You have earned a total of $"<<pay<<endl;
